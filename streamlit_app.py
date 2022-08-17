@@ -10,7 +10,7 @@ st.title('NBA Player Stats Explorer')
 st.markdown("""
 This app performs simple webscraping of NBA player stats data!
 * **Python libraries:** base64, pandas, streamlit
-* **Data source:** [Basketball-reference.com](https://www.basketball-reference.com/).
+* **Data source:** [https://www.api.usaspending.gov/state](https://www.api.usaspending.gov/state/).
 """)
 
 st.sidebar.header('User Input Features')
@@ -19,7 +19,7 @@ selected_year = st.sidebar.selectbox('Year', list(reversed(range(1950,2022))))
 # Web scraping of NBA player stats
 @st.cache
 def load_data(year):
-    url = "https://www.usaspending.gov/state" + str(year) + "_per_game.html"
+    url = "https://www.api.usaspending.gov/state" + str(year) + "_per_game.html"
     html = pd.read_html(url, header = 0)
     df = html[0]
     raw = df.drop(df[df.Age == 'Age'].index) # Deletes repeating headers in content
