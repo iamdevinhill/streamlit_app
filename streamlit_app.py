@@ -10,7 +10,7 @@ st.title('NBA Player Stats Explorer')
 st.markdown("""
 This app performs simple webscraping of NBA player stats data!
 * **Python libraries:** base64, pandas, streamlit
-* **Data source:** [https://www.api.usaspending.gov/state](https://www.api.usaspending.gov/state/).
+* **Data source:** [https://www.api.usaspending.gov/state](https://www.usaspending.gov/state/).
 """)
 
 st.sidebar.header('User Input Features')
