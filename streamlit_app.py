@@ -19,7 +19,7 @@ selected_year = st.sidebar.selectbox('Year', list(reversed(range(1950,2020))))
 # Web scraping of NBA player stats
 @st.cache
 def load_data(year):
-    url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost"
+    url = "https://www.basketball-reference.com/leagues/NBA_" + str(year) + "_per_game.html"
     html = pd.read_html(url, header = 0)
     df = html[0]
     raw = df.drop(df[df.Age == 'Age'].index) # Deletes repeating headers in content
