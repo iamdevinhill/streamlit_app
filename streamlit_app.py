@@ -54,7 +54,7 @@ def filedownload(df):
     return href
 
 st.markdown(filedownload(df_selected_team), unsafe_allow_html=True)
-st.set_option('deprecation.showPyplotGlobalUse', False)
+
 # Heatmap
 if st.button('Intercorrelation Heatmap'):
     st.header('Intercorrelation Matrix Heatmap')
@@ -68,3 +68,4 @@ if st.button('Intercorrelation Heatmap'):
         f, ax = plt.subplots(figsize=(7, 5))
         ax = sns.heatmap(corr, mask=mask, vmax=1, square=True)
     st.pyplot()
+st.set_option('deprecation.showPyplotGlobalUse', False)
